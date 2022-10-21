@@ -358,6 +358,9 @@ trait Replyable
 	{
 		$headers = $this->symfonyEmail->getHeaders();
 
+        if ($header == 'Message-ID')
+            $headers->addIdHeader($header, $value);
+
 		$headers->addTextHeader($header, $value);
 
 	}

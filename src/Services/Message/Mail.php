@@ -189,6 +189,18 @@ class Mail extends GmailConnection
 		return $this->threadId;
 	}
 
+    /**
+     * set thread ID of the email
+     *
+     * @param string $threadId
+     * @return void
+     */
+    public function setThreadId($threadId)
+    {
+        $this->threadId = $threadId;
+    }
+
+
 	/**
 	 * Returns history ID of the email
 	 *

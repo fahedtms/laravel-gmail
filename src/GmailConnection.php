@@ -229,6 +229,15 @@ class GmailConnection extends Google_Client
 
 		return $service->users->getProfile('me');
 	}
+	
+	public function getThread($threadID)
+    {
+        $service = new Google_Service_Gmail($this);
+        $params = ['userId' => 'me'];
+        $optParams = ['id' => $threadID];
+        $params = array_merge($params, $optParams);
+        return $service->users_threads->call('get', [$params]);
+    }
 
 	/**
 	 * Revokes user's permission and logs them out
